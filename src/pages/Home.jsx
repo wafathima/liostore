@@ -1,5 +1,5 @@
 import Hero from "../components/Hero";
-import CategoryGrid from "../components/categoryGrid";
+import CategoryGrid from "../components/CategoryGrid";
 import BannerGrid from "../components/BannerGrid";
 import FeaturesSection from "../components/FeaturesSection";
 import { useNavigate } from "react-router-dom";
