@@ -1,14 +1,25 @@
-import { Outlet, NavLink} from "react-router-dom";
+import { Outlet, NavLink, useNavigate} from "react-router-dom";
+import { logout } from "../../features/auth/authSlice";
+
 import { LayoutDashboard,Users,Package,ShoppingBag,UserCircle2,LogOut } from "lucide-react";
+import { useDispatch } from "react-redux";
 
 export default function AdminLayout (){
+
+    const navigate = useNavigate();
+    const dispatch = useDispatch()
+
+     const handleLogout = () => {
+        dispatch(logout());
+        navigate("/");
+      };
     return (
         <div className="flex min-h-screen">
 
             <aside className="w-64 bg-gray-900 text-white flex flex-col justify-between">
                 <div>
 
-                <h2 className="text-3xl font-extrabold text-center mt-8 mb-10 tracking-wide mt-10">L I O</h2>
+                <h2 className="text-3xl font-extrabold text-center mt-8 mb-10 tracking-wide mt-10">⫹L I O</h2>
 
                 <nav className="flex flex-col gap-3 px-4">
                    <SidebarLink to="/admin/dashboard" icon={<LayoutDashboard />} label="Dashboard" />
@@ -25,7 +36,8 @@ export default function AdminLayout (){
                 <p className="text-gray-400 text-sm">admin@gmail.com</p>
             </div>
 
-            <LogOut  className="w-5 h-5 text-gray-400 ml-auto hover:text-white cursor-pointer" />
+            <LogOut onClick={handleLogout}
+             className="w-5 h-5 text-gray-400 ml-auto hover:text-white cursor-pointer" />
          </div>
           </aside>
 

@@ -14,7 +14,6 @@ export default function OrdersPage(){
 
    
     useEffect(()=>{
-
     if (!user)return ;
 
     fetch("http://localhost:5001/orders")
@@ -37,6 +36,7 @@ export default function OrdersPage(){
          </div>
         );
     }
+    
  
     return (
         <div className="min-h-screen flex flex-col">

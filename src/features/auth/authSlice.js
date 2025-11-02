@@ -101,6 +101,7 @@ const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(loginUser.fulfilled, (state, action) => {
+        const { password, ...safeUser } = action.payload;
         state.user = action.payload;
         state.status = "succeeded";
         state.error = null;
@@ -111,6 +112,7 @@ const authSlice = createSlice({
         state.status = "failed";
       })
       .addCase(signupUser.fulfilled, (state, action) => {
+        const { password, ...safeUser } = action.payload;
         state.user = action.payload;
         state.status = "succeeded";
         state.error = null;

@@ -51,7 +51,8 @@ export default function Shop(){
                 </h1>
                   
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-10 max-w-5xl mx-auto">
-                    {/* {search} */}
+                    
+                    
                     <div className="relative w-full sm:w-1/2">
                     <Search
                     size={20}
@@ -67,7 +68,8 @@ export default function Shop(){
                      />
                     </div>
 
-                    {/* {sort} */}
+                   
+                   
                     <select
                     value={sortOrder}
                     onChange={(e)=>setSortOrder(e.target.value)}

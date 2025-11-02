@@ -31,17 +31,13 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-lg z-50">
       <div className="max-w-8xl mx-auto px-9 py-5 flex justify-between items-center">
-        {/* Logo */}
+        
         <Link to="/" className="flex items-center gap-2">
-          <img
-            src="/LIO (1).png"
-            alt="logo"
-            className="w-30 h-18 object-contain"
-          />
+          <h1 className="text-6xl font-bold">⫹LIO</h1>
         </Link>
 
         <div className="flex items-center gap-4">
-          {/* Cart  */}
+          
           <div
             onClick={handleCartClick}
             className="relative cursor-pointer hover:text-gray-700 transition-colors"
@@ -54,7 +50,7 @@ export default function Navbar() {
             )}
           </div>
 
-          {/* Bag  */}
+          
           <Link to="/bag" className="relative hover:text-gray-700">
             <ShoppingBag size={26} />
             {bagItems.length > 0 && (
@@ -64,12 +60,12 @@ export default function Navbar() {
             )}
           </Link>
 
-           {/* {wishlist} */}
+           
           <Link to="/wishlist"  className="relative">
           <Heart className="w-6 h-6 text-gray-700 hover:text-pink-600 transition"/>
           </Link>
 
-          {/* Profile */}
+          
           <div className="relative">
             {user ? (
               <div>

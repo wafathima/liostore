@@ -5,7 +5,6 @@ export default function Footer(){
         <footer className="bg-gray-200 text-black py-10 px-6">
             <div className="max-w-6xl max-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
-                {/* {support} */}
                 <div>
                     <h3 className="text-black font-semibold mb-4">SUPPORT</h3>
                     <ul className="space-y-2 text-sm"> 
@@ -18,7 +17,6 @@ export default function Footer(){
                     </ul>
                 </div>
 
-                {/* {about} */}
                 <div>
                     <h3 className="text-black font-semibold mb-4">ABOUT</h3>
                     <ul className="space-y-2 text-sm">
@@ -31,7 +29,6 @@ export default function Footer(){
                     </ul>
                 </div>
 
-               {/* {social icons} */}
                <div className="md:text-right">
                 <h3 className="text-black font-semibold mb-4">STAY UP TO DATE</h3>
                 <div className="flex md:justify-end gap-5 text-xl">
@@ -44,7 +41,6 @@ export default function Footer(){
                </div>
             </div>
 
-             {/* {bottom} */}
              <div className="mt-8 border-t border-gray-700 pt-4 text-center text-sm text-black">
                 © {new Date().getFullYear()} LIO. All rights reserved.
              </div>

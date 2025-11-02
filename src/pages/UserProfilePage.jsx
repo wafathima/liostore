@@ -111,7 +111,7 @@ export default function UserProfilePage() {
 
   if (loading) {
     return (
-      <div className="p-8 bg-gray-50 min-h-screen flex items-center justify-center">
+         <div className="p-8 bg-gray-50 min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto"></div>
           <p className="mt-4 text-gray-600">Loading user profile...</p>
@@ -122,8 +122,8 @@ export default function UserProfilePage() {
 
   if (error || !user) {
     return (
-      <div className="p-8 bg-gray-50 min-h-screen flex items-center justify-center">
-        <div className="text-center">
+         <div className="p-8 bg-gray-50 min-h-screen flex items-center justify-center">
+          <div className="text-center">
           <p className="text-red-600 text-lg mb-4">
             {error || "User not found"}
           </p>
@@ -133,8 +133,8 @@ export default function UserProfilePage() {
           >
             Back to Users
           </button>
+          </div>
         </div>
-      </div>
     );
   }
 
@@ -147,8 +147,8 @@ export default function UserProfilePage() {
   ];
 
   return (
-    <div className="p-8 bg-gray-50 min-h-screen">
-      <div className="flex items-center justify-between mb-8">
+       <div className="p-8 bg-gray-50 min-h-screen">
+         <div className="flex items-center justify-between mb-8">
         <div className="flex items-center gap-4">
           <button
             onClick={() => navigate('/admin/users')}
@@ -156,13 +156,13 @@ export default function UserProfilePage() {
           >
             <ArrowLeft className="w-6 h-6" />
           </button>
-          <div>
+           <div>
             <h1 className="text-3xl font-semibold text-gray-900">User Profile</h1>
             <p className="text-gray-600">Detailed information about the user</p>
           </div>
         </div>
         
-        <div className="flex items-center gap-4">
+           <div className="flex items-center gap-4">
           <div className={`px-4 py-2 rounded-full text-sm font-medium ${
             user.status === 'active' ? 'bg-green-100 text-green-800' :
             user.status === 'block' ? 'bg-red-100 text-red-800' :
@@ -200,11 +200,11 @@ export default function UserProfilePage() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="lg:col-span-1">
-          <div className="bg-white rounded-2xl shadow-sm p-6">
-            <div className="text-center mb-6">
-              <div className="relative inline-block">
+                  <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                 <div className="lg:col-span-1">
+                     <div className="bg-white rounded-2xl shadow-sm p-6">
+                       <div className="text-center mb-6">
+                   <div className="relative inline-block">
                 <img
                   src={editData.profilePic || `https://i.pravatar.cc/150?u=${user.email || user.id}`}
                   alt={editData.name}
@@ -230,7 +230,7 @@ export default function UserProfilePage() {
                     />
                   </label>
                 )}
-              </div>
+                </div>
               
               {isEditing ? (
                 <input
@@ -246,7 +246,7 @@ export default function UserProfilePage() {
               <p className="text-gray-600 capitalize">{user.role}</p>
             </div>
 
-            <div className="space-y-4">
+               <div className="space-y-4">
               <div className="flex items-center gap-3 text-gray-700">
                 <Mail className="w-5 h-5 text-gray-400" />
                 {isEditing ? (
@@ -297,49 +297,49 @@ export default function UserProfilePage() {
               </div>
             </div>
 
-            <div className="mt-8 pt-6 border-t border-gray-100">
-              <h3 className="text-lg font-semibold mb-4">User Statistics</h3>
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <h3 className="text-lg font-semibold mb-4">User Statistics</h3>
               <div className="space-y-3">
-                {stats.map((stat, index) => (
+            {stats.map((stat, index) => (
                   <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">
-                    <div className="flex items-center gap-3">
+               <div className="flex items-center gap-3">
                       <stat.icon className={`w-5 h-5 ${
-                        stat.color === 'blue' ? 'text-blue-600' :
+                         stat.color === 'blue' ? 'text-blue-600' :
                         stat.color === 'green' ? 'text-green-600' :
                         'text-yellow-600'
                       }`} />
-                      <span className="text-gray-700">{stat.label}</span>
+                        <span className="text-gray-700">{stat.label}</span>
                     </div>
                     <span className="font-semibold text-gray-900">{stat.value}</span>
                   </div>
                 ))}
               </div>
-            </div>
+              </div>
           </div>
-        </div>
+            </div>
 
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-2xl shadow-sm p-6">
+              <div className="bg-white rounded-2xl shadow-sm p-6">
             <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-semibold text-gray-900">Order History</h3>
+                <h3 className="text-xl font-semibold text-gray-900">Order History</h3>
               <span className="text-gray-600">{orders.length} orders</span>
             </div>
 
-            {orders.length > 0 ? (
+              {orders.length > 0 ? (
               <div className="space-y-4">
                 {orders.map((order) => (
-                  <div key={order.id} className="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors">
+                      <div key={order.id} className="border border-gray-200 rounded-lg p-4 hover:border-gray-300 transition-colors">
                     <div className="flex items-center justify-between mb-3">
                       <div>
-                        <h4 className="font-semibold text-gray-900">Order #{order.id}</h4>
+                          <h4 className="font-semibold text-gray-900">Order #{order.id}</h4>
                         <p className="text-sm text-gray-600">{order.date}</p>
-                      </div>
+                         </div>
                       <div className="text-right">
                         <p className="font-semibold text-gray-900">${order.total}</p>
-                        <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
+                           <span className={`inline-block px-2 py-1 rounded-full text-xs font-medium ${
                           order.status === 'delivered' ? 'bg-green-100 text-green-800' :
                           order.status === 'pending' ? 'bg-yellow-100 text-yellow-800' :
-                          order.status === 'cancelled' ? 'bg-red-100 text-red-800' :
+                           order.status === 'cancelled' ? 'bg-red-100 text-red-800' :
                           'bg-blue-100 text-blue-800'
                         }`}>
                           {order.status}
@@ -352,13 +352,13 @@ export default function UserProfilePage() {
                       <span>{order.items?.length || 0} items</span>
                     </div>
                     
-                    {order.items && order.items.length > 0 && (
-                      <div className="mt-2 flex gap-2">
+                       {order.items && order.items.length > 0 && (
+                         <div className="mt-2 flex gap-2">
                         {order.items.slice(0, 3).map((item, index) => (
                           <img
                             key={index}
                             src={item.image || `https://via.placeholder.com/40?text=Product`}
-                            alt={item.name}
+                           alt={item.name}
                             className="w-10 h-10 rounded object-cover border"
                           />
                         ))}
@@ -366,14 +366,14 @@ export default function UserProfilePage() {
                           <div className="w-10 h-10 rounded bg-gray-100 flex items-center justify-center text-xs text-gray-600">
                             +{order.items.length - 3}
                           </div>
-                        )}
+                          )}
                       </div>
                     )}
-                  </div>
+                    </div>
                 ))}
               </div>
             ) : (
-              <div className="text-center py-12">
+                <div className="text-center py-12">
                 <ShoppingBag className="w-16 h-16 text-gray-300 mx-auto mb-4" />
                 <p className="text-gray-600">No orders found for this user</p>
                 <p className="text-sm text-gray-500 mt-2">
@@ -381,14 +381,12 @@ export default function UserProfilePage() {
                 </p>
               </div>
             )}
-          </div>
-        </div>
       </div>
+          </div>
+ </div>
     </div>
   );
 }
 
 
 
-// https://images.footlocker.com/content/dam/final/footlocker/site/backpages/2023/story/230623-fl-adidas-brand-page-stories-asp-samba.jpg
-// https://cdn.mos.cms.futurecdn.net/8BeQFkAs2wH9yhb5qc3uv9.gif

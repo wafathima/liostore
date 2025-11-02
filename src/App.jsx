@@ -11,7 +11,7 @@ import OrderPage from "./features/orders/OrdersPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import BagPage from "./features/bag/BagPage";
 import SignUpPage from "./features/auth/SignUpPage";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import WishlistPage from "./features/wishlist/WishlistPage";
 import UserProfilePage from "./pages/UserProfilePage";
@@ -56,8 +56,19 @@ function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/orders" element={<OrderPage />} />
-        <Route path="/wishlist" element={<WishlistPage/>}/>
-        <Route path="/checkout" element={<CheckoutPage/>}/>
+        
+
+        <Route path="/wishlist" element={
+           <ProtectedRoute>
+          <WishlistPage/>
+          </ProtectedRoute>
+          }/>
+
+        <Route path="/checkout" element={
+          <ProtectedRoute>
+          <CheckoutPage/>
+          </ProtectedRoute>
+          }/>
 
         <Route
           path="/cart"
@@ -82,10 +93,10 @@ function App() {
       </Routes>
 
       <Toaster position="top-center" reverseOrder={false} />
-      
+      </div>
+      <Footer/>
     </div>
-    <Footer/>
-    </div>
+   
   );
 }
 

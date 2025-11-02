@@ -59,7 +59,7 @@ export default function AdminProducts(){
       <div className="p-8">
         <h1 className="text-3xl font-bold mb-6 mt-12">Manage Products</h1>
 
-        {/* {add} */}
+        
         <form onSubmit={handleAdd} className="mb-6 space-y-3">
         <input
         placeholder="Name"
@@ -102,7 +102,7 @@ export default function AdminProducts(){
         </button>
         </form>
 
-        {/* {pdct list} */}
+        
         <table className="w-full border">
           <thead>
             <tr className="bg-gray-200">
@@ -146,7 +146,7 @@ export default function AdminProducts(){
        </tbody>
        </table>
         
-        {/* {edit} */}
+        
         {editingProduct &&(
           <form
           onSubmit={handleEdit} className="mt-6 space-y-3">
